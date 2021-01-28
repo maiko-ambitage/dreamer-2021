@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  get 'dreamers/index'
+  devise_for :users
+ 
   root to: "dreamers#index"
+  resources :dreamers, only: [:index]
 end
