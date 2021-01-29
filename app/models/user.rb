@@ -6,7 +6,18 @@ class User < ApplicationRecord
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-         
   
+  with_options presence: true do
+    validates :nickname
+    validates :profile
+    validates :avatar
+    validates :generation_id
+  end
+
+  with_options numericality: { other_than: 1 } do
+    validates :generation_id
+  end
+
+
 end
+  
