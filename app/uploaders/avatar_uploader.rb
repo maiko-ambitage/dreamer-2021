@@ -1,4 +1,5 @@
 class AvatarUploader < CarrierWave::Uploader::Base
+  mount_uploader :avatar, AvatarUploader
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -44,5 +45,5 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-  mount_uploader :avatar, AvatarUploader
+ 
 end
