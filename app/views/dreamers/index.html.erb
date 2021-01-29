@@ -39,7 +39,10 @@
                 <h1>Example headline.</h1>
                 <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                 <%# <p><a class="btn btn-lg btn-primary" href="#" role="button">DREAMER登録</a></p> %>
+                <% unless user_signed_in? %>
                 <p><%= link_to "DREAMER登録", new_user_registration_path, class: "btn btn-lg btn-primary" %></p>
+                <% end %>
+                  
               </div>
             </div>
           </div>
