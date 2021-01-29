@@ -1,29 +1,98 @@
-<h2>Sign up</h2>
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <!-- Custom styles for this template -->
+    <%# <link href="css/carousel.css" rel="stylesheet"> %>
+  </head>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+   <header>
+     <%= render 'layouts/navbar' %>
+   </header>
+
+   <%# フォーム部分 %>
+   <div class="main">
+  <div class="card devise-card">
+    <div class="form-wrap">
+      <div class="form-group text-center">
+        <h2 class="logo-img mx-auto"></h2>
+        <p class="text-secondary">DREAMERになろう！</p>
+      </div>
+      <%= form_with model: @user, url: user_registration_path,  method: "post", class: 'registration-main',local: true do |f| %>
+
+        <div class="form-group">
+          <%= f.text_field :nickname, autofocus: true, placeholder: "ニックネーム", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワードの確認", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_area :profile, autofocus: true, placeholder: "自己紹介", class: "form-control",maxlength:"150" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.collection_select(:generation_id, Generation.all, :id, :name, {}, {class:"form-control"}) %>
+        </div>
+       
+        <div class="form-group">
+        <%= f.file_field :avatar, autofocus: true, placeholder: "プロフィール写真", class: "form-control" %>
+        </div>
+        
+        
+        <div class="actions">
+          <%= f.submit "登録する", class: "btn btn-primary w-100" %>
+        </div>
+      <% end %>
+
+      <br>
+
+      <p class="devise-link">
+        アカウントをお持ちですか？
+        <%= link_to "サインインする", new_user_session_path %>
+      </p>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+ 
+       <%= render 'layouts/footer' %>
+    
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+      
+     
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+        
+        
+        
+        
+        
 
-<%= render "devise/shared/links" %>
+  
+
+
+  
+
+
+
+
+   
+

@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_01_28_150128) do
     t.string "nickname", null: false
     t.text "profile", null: false
     t.string "avatar"
-    t.integer "genelation_id", null: false
+    t.integer "generation_id", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
