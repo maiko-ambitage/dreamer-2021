@@ -1,4 +1,4 @@
- <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+ <nav class="navbar navbar-expand-md  fixed-top" style="background-color:#fd8c04;">
         <a class="navbar-brand" href="#">DREAMERS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
@@ -9,10 +9,10 @@
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="navbar-item">
-              <a class="nav-link disable" href="#">Link</a>
+              <a class="nav-link disable" href="#">カテゴリー</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Disabled</a>
+              <a class="nav-link" href="#">叶った夢</a>
             </li>
           </ul>
           <% if user_signed_in? %>
@@ -21,7 +21,7 @@
           </div>
           <% else %>
           <div class="mr-5 align-items-center" > 
-          <p><%= link_to 'ログイン', new_user_session_path, class: "btn btn-outline-primary" %></p>  
+          <p><%= link_to 'ログイン', new_user_session_path, class: "btn-login btn-lg" %></p>  
            </div>
           <% end %>
           <form class="form-inline mt-2 mt-md-0">

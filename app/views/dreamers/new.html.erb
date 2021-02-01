@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <%# <link href="css/carousel.css" rel="stylesheet"> %>
+  </head>
+
+  <body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+   <header>
+     <%= render 'layouts/navbar' %>
+   </header>
+
+   <%# フォーム部分 %>
+   <div class="main">
+  <div class="card devise-card">
+    <div class="form-wrap">
+      <div class="form-group text-center">
+        <h2 class="logo-img mx-auto"></h2>
+        <p class="text-secondary">あなたの夢を入力してください！</p>
+      </div>
+      <%= form_with model: @dreamer, local: true  do |f| %>
+
+        <div class="form-group">
+          <%= f.text_field :dream_title, autofocus: true, placeholder: "夢のタイトル", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+         <%= f.text_field :declaration, autofocus: true, placeholder: "夢への宣言", class: "form-control" %>
+          
+        </div>
+        <div class="form-group">
+         <%= f.text_field :period, autofocus: true, placeholder: "期日・期限", class: "form-control" %>
+         </div>
+
+          <div class="form-group">
+         <%= f.text_field :reward, autofocus: true, placeholder: "叶えた時のごほうび", class: "form-control" %>
+         </div>
+        
+        <div class="form-group">
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"form-control"}) %>
+        </div>
+          
+        <div class="form-group">
+        <%= f.file_field :image, autofocus: true, placeholder: "夢写真", class: "form-control" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "投稿する", class: "btn btn-primary w-100" %>
+        </div>
+      <% end %>
+    </div>
+   </div>
+  </body>
+</html>     
+
+ 
+       <%= render 'layouts/footer' %>
+    
+        
+     
+
+       
+        
+        
+
+      
+     
+
+        
+        
+        
+        
+        
+
+  
+
+
+  
+
+
+
+
+   
+
