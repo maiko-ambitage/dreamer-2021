@@ -117,3 +117,22 @@ body {
   background: #3ccace;
   color: white;
 }
+
+.detail-btn{
+  background: #3ccace;
+  color: white;
+}
+.dream-pickup{
+  display: flex;
+  justify-content: center;
+}
+.dream-cards{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ align-items: center;
+ 
+}
+.nickname{
+  text-align: right;
+}

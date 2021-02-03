@@ -37,7 +37,7 @@
             <%= link_to image_tag("slide2.jpg",class: "slide" ),"#" %>
             <div class="container">
               <div class="carousel-caption text-left" style="font-weight: 900; color:white;">
-                <h1>叶えたい夢</h1>
+                <h1>叶えたい夢ありませんか？</h1>
                 <p>まずはDREAMER登録！！</p>
                 <%# <p><a class="btn btn-lg btn-primary" href="#" role="button">DREAMER登録</a></p> %>
                 <% unless user_signed_in? %>
@@ -53,7 +53,7 @@
             </svg> %>
              <%= link_to image_tag("slide3.jpg",class: "slide" ),"#" %>
             <div class="container">
-              <div class="carousel-caption text-right"style="font-weight: 900; color:#252525">
+              <div class="carousel-caption text-left"style="font-weight: 900; color:white,font:meiryo">
                 <h1>みんなで応援！みんなで叶える！</h1>
                 <p></p>
                 <% unless user_signed_in? %>
@@ -87,6 +87,38 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+     <%# ピックアップ %>
+    
+        <div class='dream-pickup'>
+          <h2 class='title'>PICKUP DREAMS</h2>
+       </div>
+      <div container>
+       <div class="dream-cards">    
+          <% @dreamers.each do |dreamer| %>
+         <div class="card" style="width: 18rem;">
+         
+         <%= image_tag( dreamer.image, class: :"card-img-top") %>
+        
+         <div class="card-body">
+          <p class="card-title" stayle="font-weight:bold"></p>
+           <%= dreamer.dream_title%>
+          </p>
+         
+         <p class="card-text"> </p>
+          
+           <%= dreamer.declaration%>
+          </p>
+           <p class="nickname">
+           <%= "by #{dreamer.user.nickname}" %>
+           </p>
+           <p><%= link_to "詳細", dreamer_path(dreamer.id), class:"detail-btn btn-lg"%></p>
+         </div>
+       </div>
+         <% end %>
+     </div>
+    
+     
+     
 
 
         <%# フッター %>

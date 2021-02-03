@@ -19,6 +19,9 @@ class DreamersController < ApplicationController
       render :new
     end
   end
+
+  def show
+  end
   
   def basic_auth
   end
