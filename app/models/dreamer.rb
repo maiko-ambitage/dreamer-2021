@@ -2,8 +2,9 @@ class Dreamer < ApplicationRecord
 extend ActiveHash::Associations::ActiveRecordExtensions
 belongs_to :genre
 
+default_scope -> { order(created_at: :desc) }
+
 has_one_attached :image
-# has_one_attached :image
 belongs_to :user
 has_many :comments
 

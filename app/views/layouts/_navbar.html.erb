@@ -17,11 +17,11 @@
           </ul>
           <% if user_signed_in? %>
           <div class="mr-5 align-items-center" >
-          <p><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-outline-primary"%></p>
+          <p><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn-sl btn-lg"%></p>
           </div>
           <% else %>
           <div class="mr-5 align-items-center" > 
-          <p><%= link_to 'ログイン', new_user_session_path, class: "btn-login btn-lg" %></p>  
+          <p><%= link_to 'ログイン', new_user_session_path, class: "btn-sl btn-lg" %></p>  
            </div>
           <% end %>
           <form class="form-inline mt-2 mt-md-0">
